@@ -1,6 +1,7 @@
 package student;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 /**
@@ -62,13 +63,14 @@ public class Student {
 	}
 	
 	/**
-	 * A hacky method for setting the birthdate using String.
+	 * A method for setting the birthdate using String.
 	 * @param datestr is a String containing birthday in the format "dd/mm/yyyy".
 	 * @throws IllegalArgumentException if datestr is not in the correct format.
 	 */
 	//TODO Improve this code. Let LocalDate and DateTimeFormatter parse
 	// the string for you.  Eliminate the use of Scanner!
 	private void setBirthdate(String datestr) {
+		/* old complex code
 		Scanner scanner = new Scanner(datestr);
 		scanner.useDelimiter("/");
 		if (!scanner.hasNextInt())
@@ -83,6 +85,13 @@ public class Student {
 		if (scanner.hasNext())
 			throw new IllegalArgumentException("date string must have format dd/mm/yyyy");
 		birthdate = LocalDate.of(year, month, day);
+		*/
+		try {
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			birthdate = LocalDate.parse(datestr, formatter);
+		} catch( Exception e ) {
+			throw e;
+		}
 	}
 	
 	@Override
