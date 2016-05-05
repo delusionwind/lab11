@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
 public class Task5 implements Runnable{
 	private BufferedReader br;
 	// Limit number of words read.  Otherwise, the next task could be very sloooow.
-    static final int MAXCOUNT = 50_000;
+    static final int MAXCOUNT = 100_000;
 	
 	public Task5() {
         br = null;
