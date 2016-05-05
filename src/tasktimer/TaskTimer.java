@@ -5,8 +5,8 @@ import static java.lang.System.out;
 /**
  * Time how long it takes to perform some tasks
  * using different programming constructs.
- * 
- * TODO Improve this code by restructuring it to eliminate duplicate code.
+ * New version which remove duplicate code as separate class name Task*.
+ * @author Napon Kittisiriprasert
  */
 public class TaskTimer {
 
@@ -20,6 +20,9 @@ public class TaskTimer {
      */
     
     
+    /**
+     * @param task the task to execute
+     */
     public static void execAndPrint( Runnable task ) {
     	out.println("Starting task: " + task.toString());
     	StopWatch timer = new StopWatch();

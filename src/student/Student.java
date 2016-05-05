@@ -8,6 +8,7 @@ import java.util.Scanner;
  * A student with a name, student id, and birthday.
  * 
  * @author jim
+ * edited by Napon Kittisiriprasert
  */
 public class Student {
 	private String id;

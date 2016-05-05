@@ -7,7 +7,7 @@ import java.util.Comparator;
 
 /**
  * Display reminders of students having a birthday soon.
- * @author you
+ * @author Napon Kittisiriprasert
  */
 public class StudentApp {
 
@@ -21,6 +21,10 @@ public class StudentApp {
 		students.stream().filter(filter).sorted(compare).forEach(action);
 	}
 	
+	/**
+	 * main method to test the usage of java8 interfaces.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		List<Student> students = Registrar.getInstance().getStudents();
 		Comparator<Student> byName = (a, b) -> a.toString().compareTo(b.toString());

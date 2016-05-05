@@ -1,5 +1,9 @@
 package tasktimer;
 
+/**
+ * Stop watch to be the timer for task.
+ * @author Napon Kittisiriprasert
+ */
 public class StopWatch {
 	private long startTime;
 	private long stopTime;
