@@ -5,8 +5,7 @@ import static java.lang.System.out;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
-import tasktimer.TaskTimer.IntCounter;
+import java.util.function.IntConsumer;
 
 /**
  * Process all the words in a file (one word per line) using BufferedReader
@@ -55,4 +54,18 @@ public class Task3 implements Runnable{
 	public String toString() {
 		return "read words using BufferedReader and Stream";
 	}
+}
+
+class IntCounter implements IntConsumer {
+    // count the values
+    public int count = 0;
+    // total of the values
+    private long total = 0;
+    /** accept consumes an int. In this method, count the value and add it to total. */
+    public void accept(int value) { count++; total += value; }
+    /** Get the average of all the values consumed. */
+    public double average() { 
+        return (count>0) ? ((double)total)/count : 0.0;
+    }
+    public int getCount() { return count; }
 }
